@@ -1,0 +1,17 @@
+{
+  "$schema": "../tex_resume/json_schema/resume.json",
+  "basics": {
+    "first_name": "Max",
+    "middle_names": [""],
+    "last_name": "Mustermann",
+    "email": "maximax999@example.net",
+    "location": {
+      "country_code": "DE",
+      "postal_code": "12345",
+      "city": "Musterstadt",
+      "street": "Musterstraße",
+      "house_number": "13",
+      "appartment_number": "7"
+    }
+  }
+}

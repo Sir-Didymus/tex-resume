@@ -1,0 +1,36 @@
+%! TeX program = lualatex
+%
+% This file loads the resume data and defines helper commands.
+% It is meant to be \input{} into the preamble of a main .tex document.
+
+\usepackage{luacode}
+
+\begin{luacode*}
+-- Simple error handler function that doesn't output directly to the document
+function report_error(msg)
+  tex.error("Resume loader error: " .. msg)
+end
+
+-- Try to load the Lua functions file
+local ok, err = pcall(function() dofile("../../../tex_resume/resume_functions.lua") end)
+if not ok then
+  report_error("Could not load resume_functions.lua: " .. tostring(err))
+end
+
+-- Only try to load data if the functions loaded successfully
+if ok and load_resume_data then
+  local data_ok, data_result = pcall(function() return load_resume_data("../../resume.json") end)
+  if not data_ok then
+    report_error("Error calling load_resume_data: " .. tostring(data_result))
+  elseif not data_result then
+    report_error("load_resume_data returned false")
+  end
+else
+  report_error("load_resume_data function not available")
+end
+\end{luacode*}
+
+% Define commands for accessing resume data - simpler versions with error handling
+\newcommand{\ResumeBasicsFirstname}{\directlua{get_value("basics", "first_name")}}
+
+\newcommand{\ResumeBasicsLastname}{\directlua{get_value("name", "last_name")}}

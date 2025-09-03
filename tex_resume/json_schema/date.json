@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "date.json",
+  "title": "Date",
+  "description": "A date divided into year, moth, and day values",
+  "type": "object",
+  "properties": {
+    "year": {
+      "description": "Year as either an integer or a string",
+      "type": ["integer", "string"]
+    },
+    "month": {
+      "description": "Month as either an integer or a string",
+      "type": ["integer", "string"]
+    },
+    "day": {
+      "description": "Day as either an integer or a string",
+      "type": ["integer", "string"]
+    }
+  },
+  "required": ["year", "month", "day"]
+}

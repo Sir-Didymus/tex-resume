@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "basic.json",
+  "title": "Basics",
+  "description": "Basic information about yourself",
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "description": "Your first name",
+      "type": "string"
+    },
+    "middle_names": {
+      "description": "Any middle names or additional first names you might have",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_name": {
+      "description": "Your last name",
+      "type": "string"
+    },
+    "label": {
+      "description": "A label for your profile - This could be a job title like \"Software Engineer\" for example",
+      "type": "string"
+    },
+    "email": {
+      "description": "Your email address",
+      "type": "string"
+    },
+    "location": {
+      "description": "You location",
+      "$ref": "location.json"
+    }
+  },
+  "required": ["first_name", "last_name", "location"]
+}

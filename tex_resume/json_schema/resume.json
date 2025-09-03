@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "resume.json",
+  "title": "Resume",
+  "description": "Your resume",
+  "type": "object",
+  "properties": {
+    "basics": {
+      "description": "Basic informaton about yourself",
+      "$ref": "basics.json"
+    }
+  },
+  "required": ["basics"]
+}

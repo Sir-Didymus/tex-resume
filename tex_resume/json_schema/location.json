@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "location.json",
+  "title": "Location",
+  "description": "Where you live",
+  "type": "object",
+  "properties": {
+    "country_code": {
+      "description": "Your country code, i.e. \"DE\" for Germany",
+      "type": "string"
+    },
+    "postal_code": {
+      "description": "Your postal code",
+      "type": "string"
+    },
+    "city": {
+      "description": "Your city",
+      "type": "string"
+    },
+    "street": {
+      "description": "Your street",
+      "type": "string"
+    },
+    "house_number": {
+      "description": "Your house number",
+      "type": "string"
+    },
+    "appartment_number": {
+      "description": "Your appartment number",
+      "type": "string"
+    }
+  },
+  "required": ["postal_code", "city", "street", "house_number"]
+}
